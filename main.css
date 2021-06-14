@@ -1,0 +1,272 @@
+* {
+  font-family: 'Jost', sans-serif;
+}
+
+body {
+  background-color: #f3f3f3;
+}
+
+:root {
+  --main-color: #4400ff;
+  --accent-color: #daab01;
+}
+
+.text-main {
+  color: var(--main-color) !important;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent-color) !important;
+}
+
+.borderLeftRight {
+  position: relative;
+}
+
+.borderLeftRight::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--main-color);
+  transform-origin: bottom right;
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.borderLeftRight:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+header {
+  height: 100vh;
+  min-height: 500px;
+  width: 100%;
+}
+
+.img-header {
+  width: 60%;
+}
+
+@media screen and (min-width: 992px) {
+  .img-header {
+    width: 100%;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--main-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buttonOverlay {
+  padding: 12px 24px;
+  position: relative;
+  color: white;
+  border: none;
+}
+
+.buttonOverlay span {
+  position: relative;
+  z-index: 1;
+}
+
+.buttonOverlay::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 5px;
+  right: 5px;
+  background-color: var(--main-color);
+  transition: transform .2s ease-in-out;
+}
+
+.buttonOverlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--accent-color);
+  transition: transform .2s ease-in-out;
+}
+
+.buttonOverlay:hover::before {
+  transform: translate(6px, -4px);
+}
+
+.buttonOverlay:hover::after {
+  transform: translate(-6px, 4px);
+}
+
+#cardGlass {
+  position: relative;
+}
+
+.card-glass {
+  border-radius: 5px;
+  padding: 40px 10px;
+  position: relative;
+  backdrop-filter: blur(3px);
+}
+
+#cardGlass::before {
+  position: absolute;
+  content: '';
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  top: 25px;
+  left: 30px;
+  transform: rotate(-10deg);
+  border: 2px solid var(--accent-color);
+  z-index: -1;
+}
+
+#cardGlass::after {
+  position: absolute;
+  content: '';
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  bottom: 25px;
+  right: 20px;
+  transform: rotate(-10deg);
+  border: 2px solid var(--accent-color);
+  z-index: -1;
+  transform: rotate(10deg);
+}
+
+.boxQuality {
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  background: linear-gradient(120deg, #571bffc8, #fcd546cf);
+}
+
+.boxQuality-2 {
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  background: linear-gradient(120deg, #fcd546cf, #571bffc8);
+}
+
+.credit-card {
+  width: 320px;
+  height: 200px;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #7a4aff9e, #fedf709c);
+  box-shadow: 8px 4px 16px -1px #9a9a9a9c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+.credit-card-wrapper {
+  width: 320px;
+  height: 200px;
+  position: relative;
+}
+
+.credit-card-wrapper::before {
+  position: absolute;
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  top: -20px;
+  left: -30px;
+  transform: rotate(10deg);
+  border: 2px solid var(--accent-color);
+}
+
+.credit-card-wrapper::after {
+  position: absolute;
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  bottom: -30px;
+  right: -20px;
+  transform: rotate(-10deg);
+  border: 2px solid var(--accent-color);
+  z-index: -1;
+}
+
+.wrapper {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+  border: 2px dashed var(--main-color);
+}
+
+.center {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.bg-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-footer::before {
+  position: absolute;
+  content: '';
+  width: 50%;
+  height: 70%;
+  bottom: -120px;
+  right: -60px;
+  background: linear-gradient(120deg, #f3f3f3, #f3f3f3) padding-box, linear-gradient(120deg, var(--main-color), var(--accent-color)) border-box;
+  border: 4px solid transparent;
+  border-radius: 50px 0 0 50px;
+  z-index: -1;
+  opacity: 0.2;
+  transform: rotate(50deg);
+}
